@@ -1,0 +1,23 @@
+{
+    "host": "0.0.0.0",
+    "port": 19132,
+
+    "game": "MCPE",
+    "motd": [
+        "RakNet Pong"
+    ],
+    "protocol": 361,
+    "version": "1.12.1",
+    "player_count": {
+        "min": 0,
+        "max": 19
+    },
+    "max_player_count": {
+        "min": 20,
+        "max": 99
+    },
+    "sub_motd": [
+        "PING PING PONG PONG"
+    ],
+    "game_type": "Survival"
+}
