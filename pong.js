@@ -22,8 +22,16 @@ config.player_count.min = config.player_count.min || 0;
 config.player_count.max = config.player_count.max || 19;
 config.max_player_count.min = config.max_player_count.min || 20;
 config.max_player_count.max = config.max_player_count.max || 99;
-if (Object.prototype.toString.apply(config.motd) !== '[object Array]' || config.motd.length == 0) config.motd = ['RakNet Pong'];
-if (Object.prototype.toString.apply(config.sub_motd) !== '[object Array]' || config.sub_motd.length == 0) config.sub_motd = ['PING PING PONG PONG'];
+if (Object.prototype.toString.apply(config.motd) === '[object String]' && config.motd.length) {
+    config.motd = [config.motd];
+} else if (Object.prototype.toString.apply(config.motd) !== '[object Array]' || config.motd.length == 0) {
+    config.motd = ['RakNet Pong'];
+}
+if (Object.prototype.toString.apply(config.sub_motd) === '[object String]' && config.sub_motd.length) {
+    config.sub_motd = [config.sub_motd];
+} else if (Object.prototype.toString.apply(config.sub_motd) !== '[object Array]' || config.sub_motd.length == 0) {
+    config.sub_motd = ['PING PING PONG PONG'];
+}
 
 var server = dgram.createSocket('udp4'),
     serverId = BigInt(Math.floor(Math.random() * 10000000000000000)),
